@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         switch segueIdentifier(for: segue) {
         case .pickAColor:
             let controller = segue.destination as! ColorPickerViewController
-            controller.delegate = self
+            controller.completionHandler = userDidChooseColor
             break
         
         }
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : ColorPickerViewDelegate {
+extension ViewController {
     func userDidChooseColor(color: UIColor) {
         dismiss(animated: true, completion: nil)
         
