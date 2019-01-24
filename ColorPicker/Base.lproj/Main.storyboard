@@ -25,11 +25,11 @@
                                     <color key="titleColor" name="Color"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VNy-wr-4im" kind="show" id="YiN-3L-EZh"/>
+                                    <segue destination="VNy-wr-4im" kind="show" identifier="pickAColor" id="YiN-3L-EZh"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="Green"/>
+                        <color key="backgroundColor" name="green"/>
                         <constraints>
                             <constraint firstItem="RpH-hq-Dx5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Id2-pg-XeN"/>
                             <constraint firstItem="RpH-hq-Dx5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TvY-1R-wOc"/>
@@ -41,27 +41,62 @@
             </objects>
             <point key="canvasLocation" x="-258" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="B5T-UW-Xaq">
             <objects>
-                <viewController id="VNy-wr-4im" sceneMemberID="viewController">
+                <viewController id="VNy-wr-4im" customClass="ColorPickerViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWR-tF-1wS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="YGN-e2-kHF">
+                                <rect key="frame" x="139.5" y="124.5" width="96" height="418"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-aj-0yz">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                        <state key="normal" backgroundImage="greenIcon"/>
+                                        <connections>
+                                            <action selector="greenBtn:" destination="VNy-wr-4im" eventType="touchUpInside" id="Fx8-d9-Ybh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoC-hL-7Zi">
+                                        <rect key="frame" x="0.0" y="161" width="96" height="96"/>
+                                        <state key="normal" backgroundImage="orangeIcon"/>
+                                        <connections>
+                                            <action selector="orangeBtn:" destination="VNy-wr-4im" eventType="touchUpInside" id="gVg-z1-O6N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOm-BY-m2K">
+                                        <rect key="frame" x="0.0" y="322" width="96" height="96"/>
+                                        <state key="normal" backgroundImage="purpleIcon"/>
+                                        <connections>
+                                            <action selector="purpleBtn:" destination="VNy-wr-4im" eventType="touchUpInside" id="LGw-Ei-UZy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YGN-e2-kHF" firstAttribute="centerX" secondItem="eWR-tF-1wS" secondAttribute="centerX" id="1gl-4f-ItQ"/>
+                            <constraint firstItem="YGN-e2-kHF" firstAttribute="centerY" secondItem="eWR-tF-1wS" secondAttribute="centerY" id="ATV-ks-6hS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ii4-lx-lgI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIT-qw-I1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="109"/>
+            <point key="canvasLocation" x="532" y="108.39580209895054"/>
         </scene>
     </scenes>
     <resources>
+        <image name="greenIcon" width="96" height="96"/>
+        <image name="orangeIcon" width="96" height="96"/>
+        <image name="purpleIcon" width="96" height="96.5"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Green">
+        <namedColor name="green">
             <color red="0.45882352941176469" green="0.74901960784313726" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
